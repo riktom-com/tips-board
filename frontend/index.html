@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Georgia Field Reports — riktom.com</title>
+  <meta name="description" content="Tips, fishing reports, hunting intel, and local knowledge for South Georgia outdoors people — shared by the community, for the community.">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2646745084546998" crossorigin="anonymous"></script>
+
+  <!-- Ad Blocking Recovery -->
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-2646745084546998?ers=1"></script>
+  <script>
+    (function() {
+      function signalGooglefcPresent() {
+        if (!window.frames['googlefcPresent']) {
+          if (document.body) {
+            const iframe = document.createElement('iframe');
+            iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+            iframe.style.display = 'none';
+            iframe.name = 'googlefcPresent';
+            document.body.appendChild(iframe);
+          } else {
+            setTimeout(signalGooglefcPresent, 0);
+          }
+        }
+      }
+      signalGooglefcPresent();
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="https://riktom.com" class="logo">rik<span>tom</span>.com</a>
+  <ul class="nav-links">
+    <li><a href="https://riktom.com">Home</a></li>
+    <li><a href="https://riktom.com/about.html">About</a></li>
+    <li><a href="https://riktom.com/articles/">Articles</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" aria-haspopup="true">Apps ▾</a>
+      <div class="dropdown-menu">
+        <a href="https://river.riktom.com"><span class="dd-icon">🎣</span>RiverWatch</a>
+        <a href="https://fire.riktom.com"><span class="dd-icon">🔥</span>Fire Watcher</a>
+        <a href="https://forecast.riktom.com"><span class="dd-icon">🌤️</span>Hunt &amp; Fish Forecast</a>
+        <a href="https://hunt.riktom.com"><span class="dd-icon">🦌</span>Hunting Season Tracker</a>
+        <a href="https://trucks.riktom.com"><span class="dd-icon">🚛</span>Truck Finder</a>
+        <a href="https://burn.riktom.com"><span class="dd-icon">🔥</span>Burn Permit Checker</a>
+        <a href="https://ramps.riktom.com"><span class="dd-icon">⚓</span>Ramp Radar</a>
+        <a href="https://tips.riktom.com"><span class="dd-icon">⛺</span>Field Reports</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <h1>⛺ South Georgia Field Reports</h1>
+  <p>Tips, fishing reports, hunting intel, and local knowledge — shared by the community, for the community.</p>
+  <button class="btn-primary" data-action="new-post">✏️ Share a Report</button>
+</section>
+
+<!-- ── CATEGORY FILTER ── -->
+<div class="filter-bar">
+  <button class="chip active" data-cat="all">All Reports</button>
+  <button class="chip" data-cat="fishing">🎣 Fishing</button>
+  <button class="chip" data-cat="hunting">🦌 Hunting</button>
+  <button class="chip" data-cat="ramps">⚓ Boat Ramps</button>
+  <button class="chip" data-cat="camping">🏕️ Camping</button>
+  <button class="chip" data-cat="general">💬 General</button>
+</div>
+
+<!-- ── MAIN ── -->
+<main>
+  <div id="status-msg" role="alert"></div>
+  <div id="feed" aria-live="polite" aria-label="Field reports feed">
+    <!-- Cards rendered by JS -->
+  </div>
+</main>
+
+<!-- ── DETAIL PANEL ── -->
+<div id="detail-overlay" role="dialog" aria-modal="true" aria-label="Report detail">
+  <div id="detail-panel">
+    <div id="detail-content">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ── NEW POST MODAL ── -->
+<div id="modal-overlay" role="dialog" aria-modal="true" aria-label="Share a field report">
+  <div id="modal">
+    <div class="modal-header">
+      <h2>✏️ Share a Field Report</h2>
+      <button class="panel-close" id="modal-close-btn" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="post-form" novalidate>
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="post-name">Your Name *</label>
+            <input type="text" id="post-name" placeholder="John Smith" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="post-email">Email * <span style="font-weight:400;color:var(--gray)">(not shown)</span></label>
+            <input type="email" id="post-email" placeholder="you@email.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label for="post-category">Category *</label>
+            <select id="post-category" required>
+              <option value="">Select a category…</option>
+              <option value="fishing">🎣 Fishing</option>
+              <option value="hunting">🦌 Hunting</option>
+              <option value="ramps">⚓ Boat Ramps</option>
+              <option value="camping">🏕️ Camping</option>
+              <option value="general">💬 General</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="post-area">Area / Location</label>
+            <input type="text" id="post-area" placeholder="e.g. Withlacoochee River, Alapaha WMA">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:.75rem;">
+          <label for="post-title">Title *</label>
+          <input type="text" id="post-title" placeholder="e.g. Bass are biting on Alapaha — topwater working" required maxlength="200">
+        </div>
+        <div class="form-group" style="margin-bottom:.5rem;">
+          <label for="post-body">Report *</label>
+          <textarea id="post-body" rows="5" placeholder="Share what you know — conditions, tips, what's working, what's not…" required maxlength="5000"></textarea>
+          <span class="char-count" id="body-count">0 / 5000</span>
+        </div>
+        <p id="post-error" style="color:#c62828;font-size:.85rem;min-height:1.2rem;margin-bottom:.4rem;"></p>
+        <button type="submit" class="btn-submit" id="post-submit-btn">Submit Report</button>
+        <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-links">
+    <a href="https://riktom.com">Home</a>
+    <a href="https://riktom.com/about">About</a>
+    <a href="https://riktom.com/articles">Articles</a>
+    <a href="https://riverwatch.riktom.com">RiverWatch</a>
+    <a href="https://ramps.riktom.com">Ramp Radar</a>
+    <a href="https://tips.riktom.com">Field Reports</a>
+  </div>
+  <p>&copy; 2026 riktom.com &mdash; Hahira, Georgia</p>
+  <p style="margin-top:.4rem;">
+    <a href="mailto:hello@riktom.com">hello@riktom.com</a>
+  </p>
+</footer>
+
+<!-- ── FLOATING CONTACT ── -->
+<a href="mailto:hello@riktom.com" class="fab-contact" aria-label="Contact us">
+  ✉️ Contact
+</a>
+
+<script src="js/app.js"></script>
+</body>
+</html>
