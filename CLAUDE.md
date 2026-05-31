@@ -138,4 +138,4 @@ This app uses the shared riktom.com nav block (scoped `.rk-*` classes, self-cont
 2. Run the patcher — it finds the markers and replaces the block in place. The replace is idempotent.
 3. For repos with React/Vite builds (e.g. fire-watcher), re-patch after rebuild since `dist/index.html` is regenerated.
 
-Nav contents: Logo · About · Blog · Apps ▾ (12 apps) · 💡 Suggest · 🏠 Home (top-right white pill). Apps: RiverWatch, Fire Watcher, Hunt & Fish Forecast, Hunting Tracker, Truck Finder, Burn Permit, Ramp Radar, Field Reports, Deer Radar, Trip Planner, Night Sky, Family Fun Finder, Friday Night Scoreboard.
+Nav contents: Logo · About · Blog · Apps ▾ (15 apps) · 💡 Suggest · 🏠 Home (top-right white pill). Apps: LocalHelp, RiverWatch, Fire Watcher, Hunt & Fish Forecast, Hunting Tracker, Truck Finder, Burn Permit, Ramp Radar, Field Reports, Deer Radar, Trip Planner, Night Sky, Family Fun Finder, Storm Desk, Scoreboard.
